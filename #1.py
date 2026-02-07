@@ -21,7 +21,7 @@ def analyze_text(text):
                 for _ in cur:
                     l += 1
 
-                if l >= 5 and cur[0] == cur[l - 1] and cur not in used:
+                if l >= 5 and cur[0] == cur[l-1] and cur not in used:
                     words += [cur]
                     used += [cur]
                 cur = ""
@@ -36,18 +36,3 @@ def analyze_text(text):
 
     return (c, res)
 print(analyze_text("ROTATOR"))
-#2
-process = lambda s: " ".join(
-    map(
-        lambda w: w[::-1],
-        filter(
-            lambda w: all(ch < '0' or ch > '9' for ch in w) and len(w) % 2 == 0,
-            s.split()
-        )
-    )
-)
-text = "hello abc12 test even code44 noon"
-print(process(text))
-#333
-print(1+2)
-
