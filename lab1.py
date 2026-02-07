@@ -36,3 +36,16 @@ def analyze_text(text):
 
     return (c, res)
 print(analyze_text("ROTATOR"))
+#2
+process = lambda s: " ".join(
+    map(
+        lambda w: w[::-1],
+        filter(
+            lambda w: all(ch < '0' or ch > '9' for ch in w) and len(w) % 2 == 0,
+            s.split()
+        )
+    )
+)
+text = "hello abc12 test even code44 noon"
+print(process(text))
+
